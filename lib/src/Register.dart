@@ -10,6 +10,10 @@ class Register extends StatefulWidget {
 class _LoginState extends State<Register> {
   late String _nombree;
   late String _apellido;
+
+  get child => null;
+
+  get children => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,96 +25,86 @@ class _LoginState extends State<Register> {
               vertical: 90.0,
             ),
             children: [
-              Center(
-                child: Text('Registro',
-                    style: TextStyle(
-                      fontSize: 50,
-                    )),
-              ),
-              Column(
-                children: [
-                  Text(
-                    'nombre',
-                    style: TextStyle(fontSize: 20.0),
+              Column(children: [
+                Center(
+                  child: Text('Registro',
+                      style: TextStyle(
+                        fontSize: 50,
+                      )),
+                ),
+                //Column(
+                // children: [
+                Divider(
+                  color: Colors.transparent,
+                  height: 30.0,
+                ),
+
+                TextField(
+                  enableInteractiveSelection: false,
+                  textCapitalization: TextCapitalization.characters,
+                  decoration: InputDecoration(
+                      labelText: 'nombre',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      )),
+                  onChanged: (texto) {
+                    _nombree = texto;
+                  },
+                ),
+                Divider(
+                  color: Colors.transparent,
+                  height: 15.0,
+                ),
+
+                Divider(
+                  color: Colors.transparent,
+                  height: 10.0,
+                ),
+                TextField(
+                  enableInteractiveSelection: false,
+                  textCapitalization: TextCapitalization.characters,
+                  decoration: InputDecoration(
+                      labelText: 'apellido',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      )),
+                  onChanged: (texto) {
+                    _apellido = texto;
+                  },
+                ),
+                Divider(
+                  color: Colors.transparent,
+                  height: 15.0,
+                ),
+              ]),
+              Padding(padding: EdgeInsets.only(top: 100.0)),
+              Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.black,
                   ),
-                  Divider(
-                    color: Colors.transparent,
-                    height: 20.0,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text('atras'),
+                ),
+                Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 150.0, horizontal: 150.0)),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: Colors.black,
                   ),
-                  TextField(
-                    enableInteractiveSelection: false,
-                    textCapitalization: TextCapitalization.characters,
-                    decoration: InputDecoration(
-                        hintText: 'nombre',
-                        labelText: 'nombre',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15.0),
-                        )),
-                    onChanged: (texto) {
-                      _nombree = texto;
-                    },
-                  ),
-                  TextField(
-                    onChanged: (texto) {
-                      _nombree = texto;
-                    },
-                  ),
-                  Padding(
-                    //prueba
-                    padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Enter a search term',
-                      ),
-                    ),
-                  ),
-                  Divider(
-                    color: Colors.transparent,
-                    height: 20.0,
-                  ),
-                  Text(
-                    'Apellido',
-                    style: TextStyle(fontSize: 20.0),
-                  ),
-                  Divider(
-                    color: Colors.transparent,
-                    height: 20.0,
-                  ),
-                  TextField(
-                    enableInteractiveSelection: false,
-                    textCapitalization: TextCapitalization.characters,
-                    decoration: InputDecoration(
-                        hintText: 'apellido',
-                        labelText: 'apellido',
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15.0),
-                        )),
-                    onChanged: (texto) {
-                      _apellido = texto;
-                    },
-                  ),
-                  Divider(
-                    color: Colors.transparent,
-                    height: 20.0,
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: TextButton(
-                      style: TextButton.styleFrom(
-                        primary: Colors.white,
-                        backgroundColor: Colors.black,
-                      ),
-                      onPressed: () {
-                        print(_nombree);
-                        print(_apellido);
-                      },
-                      child: Text('siguiente'),
-                    ),
-                  ),
-                ],
-              ),
+                  onPressed: () {},
+                  child: Text('siguiente'),
+                ),
+              ])
             ]),
       ),
     );
   }
+
+  pading() {}
 }
