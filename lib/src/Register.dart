@@ -25,7 +25,7 @@ class _LoginState extends State<Register> {
                 children: [
                   Text(
                     'nombre',
-                    style: TextStyle(fontSize: 30.0),
+                    style: TextStyle(fontSize: 20.0),
                   ),
                   Divider(
                     color: Colors.transparent,
@@ -38,7 +38,7 @@ class _LoginState extends State<Register> {
                         hintText: 'nombre',
                         labelText: 'nombre',
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0),
+                          borderRadius: BorderRadius.circular(15.0),
                         )),
                     onSubmitted: (valor) {
                       _nombree = valor;
@@ -50,7 +50,7 @@ class _LoginState extends State<Register> {
                   ),
                   Text(
                     'Apellido',
-                    style: TextStyle(fontSize: 30.0),
+                    style: TextStyle(fontSize: 20.0),
                   ),
                   Divider(
                     color: Colors.transparent,
@@ -63,7 +63,7 @@ class _LoginState extends State<Register> {
                         hintText: 'apellido',
                         labelText: 'apellido',
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20.0),
+                          borderRadius: BorderRadius.circular(15.0),
                         )),
                     onSubmitted: (valor) {
                       _apellido = valor;
@@ -81,7 +81,7 @@ class _LoginState extends State<Register> {
                         backgroundColor: Colors.black,
                       ),
                       onPressed: () {},
-                      child: Text('Iniciar Sesion'),
+                      child: Text('siguiente'),
                     ),
                   ),
                 ],

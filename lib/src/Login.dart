@@ -10,7 +10,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  late String _nombre;
+  late String _username;
   late String _password;
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,8 @@ class _LoginState extends State<Login> {
                 child: Column(
                   children: [
                     Text(
-                      'Login',
-                      style: TextStyle(fontSize: 55.0),
+                      'Iniciar sesion',
+                      style: TextStyle(fontSize: 40.0),
                     ),
                     Divider(
                       color: Colors.transparent,
@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
                             borderRadius: BorderRadius.circular(20.0),
                           )),
                       onSubmitted: (valor) {
-                        _nombre = valor;
+                        _username = valor;
                       },
                     ),
                     Divider(
