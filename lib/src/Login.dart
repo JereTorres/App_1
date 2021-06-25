@@ -44,8 +44,8 @@ class _LoginState extends State<Login> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),
                           )),
-                      onSubmitted: (valor) {
-                        _username = valor;
+                      onChanged: (texto) {
+                        _username = texto;
                       },
                     ),
                     Divider(
@@ -62,8 +62,8 @@ class _LoginState extends State<Login> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0),
                           )),
-                      onSubmitted: (valor) {
-                        _password = valor;
+                      onChanged: (texto) {
+                        _password = texto;
                       },
                     ),
                     Divider(
@@ -77,7 +77,10 @@ class _LoginState extends State<Login> {
                           primary: Colors.white,
                           backgroundColor: Colors.black,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          print(_username);
+                          print(_password);
+                        },
                         child: Text('Iniciar Sesion'),
                       ),
                     ),

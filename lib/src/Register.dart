@@ -21,6 +21,12 @@ class _LoginState extends State<Register> {
               vertical: 90.0,
             ),
             children: [
+              Center(
+                child: Text('Registro',
+                    style: TextStyle(
+                      fontSize: 50,
+                    )),
+              ),
               Column(
                 children: [
                   Text(
@@ -40,9 +46,23 @@ class _LoginState extends State<Register> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         )),
-                    onSubmitted: (valor) {
-                      _nombree = valor;
+                    onChanged: (texto) {
+                      _nombree = texto;
                     },
+                  ),
+                  TextField(
+                    onChanged: (texto) {
+                      _nombree = texto;
+                    },
+                  ),
+                  Padding(
+                    //prueba
+                    padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Enter a search term',
+                      ),
+                    ),
                   ),
                   Divider(
                     color: Colors.transparent,
@@ -65,8 +85,8 @@ class _LoginState extends State<Register> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15.0),
                         )),
-                    onSubmitted: (valor) {
-                      _apellido = valor;
+                    onChanged: (texto) {
+                      _apellido = texto;
                     },
                   ),
                   Divider(
@@ -80,7 +100,10 @@ class _LoginState extends State<Register> {
                         primary: Colors.white,
                         backgroundColor: Colors.black,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        print(_nombree);
+                        print(_apellido);
+                      },
                       child: Text('siguiente'),
                     ),
                   ),
